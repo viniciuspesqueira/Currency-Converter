@@ -1,0 +1,27 @@
+:root {
+    --textcolor: white;
+    --bgcolor: black;
+    --bg-url: url(./assets/vector/background_desktop_dark.svg);
+    --stroke-color: rgba(255, 255, 255, 0.1);
+    --stroke-color-hover: white;
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+  }
+  
+  .light {
+    --textcolor: black;
+    --bgcolor: #FAFAFA;
+    --bg-url: url(./assets/vector/background_desktop_light.svg);
+    --stroke-color: rgba(0, 0, 0, 0.1);
+    --stroke-color-hover: black;
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+  }
+
+  body {
+    background: var(--bg-url) no-repeat top center;
+    background-color: var(--bgcolor);
+  }
+
