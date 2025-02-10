@@ -1,7 +1,7 @@
 :root {
     --textcolor: white;
     --bgcolor: black;
-    --bg-url: url(./assets/vector/background_desktop_dark.svg);
+    --bg-url: url(./assets/vector/background_desktop.svg);
     --stroke-color: rgba(255, 255, 255, 0.1);
     --stroke-color-hover: white;
     --surface-color: rgba(255, 255, 255, 0.1);
@@ -12,7 +12,7 @@
   .light {
     --textcolor: black;
     --bgcolor: #FAFAFA;
-    --bg-url: url(./assets/vector/background_desktop_light.svg);
+    --bg-url: url(./assets/vector/background_desktop.svg);
     --stroke-color: rgba(0, 0, 0, 0.1);
     --stroke-color-hover: black;
     --surface-color: rgba(0, 0, 0, 0.05);
@@ -20,8 +20,27 @@
     --switch-bg-url: url(./assets/sun.svg);
   }
 
-  body {
+@font-face {
+    font-family: "space_mono";
+    src: url("/Fonts/Space_Mono/.ttf");
+  }
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
     background: var(--bg-url) no-repeat top center;
     background-color: var(--bgcolor);
   }
+
+p {
+    font-family: 'space_mono', monospace;
+    color: var(--textcolor);
+  }
+
+#title {
+  font-weight: bold;
+}
 
