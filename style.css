@@ -1,46 +1,46 @@
 :root {
-    --textcolor: white;
-    --bgcolor: black;
-    --bg-url: url(./assets/vector/background_desktop.svg);
-    --stroke-color: rgba(255, 255, 255, 0.1);
-    --stroke-color-hover: white;
-    --surface-color: rgba(255, 255, 255, 0.1);
-    --highlight-color: rgba(0, 0, 0, 0.2);
-    --switch-bg-url: url(./assets/moon-stars.svg);
-  }
-  
-  .light {
-    --textcolor: black;
-    --bgcolor: #FAFAFA;
-    --bg-url: url(./assets/vector/background_desktop.svg);
-    --stroke-color: rgba(0, 0, 0, 0.1);
-    --stroke-color-hover: black;
-    --surface-color: rgba(0, 0, 0, 0.05);
-    --highlight-color: rgba(0, 0, 0, 0.1);
-    --switch-bg-url: url(./assets/sun.svg);
-  }
+  --textcolor: white;
+  --bgcolor: black;
+  --bg-url: url(https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/background_desktop.svg);
+  --stroke-color: rgba(255, 255, 255, 0.1);
+  --stroke-color-hover: white;
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --textcolor: black;
+  --bgcolor: #FAFAFA;
+  --bg-url: url(https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/background_desktop.svg);
+  --stroke-color: rgba(0, 0, 0, 0.1);
+  --stroke-color-hover: black;
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
 
 @font-face {
-    font-family: "space_mono";
-    src: url("/Fonts/Space_Mono/.ttf");
-  }
+  font-family: "space_mono";
+  src: url("/Fonts/Space_Mono/.ttf");
+}
 
 * {
-  padding: 0;
-  margin: 0;
+padding: 0;
+margin: 0;
 }
 
 body {
-    background: var(--bg-url) no-repeat top center;
-    background-color: var(--bgcolor);
-  }
+  background: var(--bg-url) no-repeat top center;
+  background-color: var(--bgcolor);
+}
 
 p {
-    font-family: 'space_mono', monospace;
-    color: var(--textcolor);
-  }
+  font-family: 'space_mono', monospace;
+  color: var(--textcolor);
+}
 
 #title {
-  font-weight: bold;
+font-weight: bold;
 }
 
