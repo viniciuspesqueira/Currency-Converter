@@ -20,9 +20,35 @@
   --switch-bg-url: url(./assets/sun.svg);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.space-mono-regular {
+  font-family: "Space Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 @font-face {
   font-family: "space_mono";
-  src: url("/Fonts/Space_Mono/.ttf");
+  src: url("https://github.com/viniciuspesqueira/Currency-Converter/tree/c50f0c721000d3115744762b59db5eeef4476193/Fonts/Space_Mono");
 }
 
 * {
@@ -33,14 +59,36 @@ margin: 0;
 body {
   background: var(--bg-url) no-repeat top center;
   background-color: var(--bgcolor);
+  display: grid;
+  place-items: center;
+}
+
+main {
+  align-content: center;
+}
+
+footer {
+  align-content: center;
 }
 
 p {
-  font-family: 'space_mono', monospace;
+  font-family: "Space Mono";
   color: var(--textcolor);
 }
+
+
+
+
 
 #title {
 font-weight: bold;
 }
 
+li {
+  color: var(--textcolor);
+  font-family: "Space Mono";
+}
+
+img {
+  width: 95px;
+}
