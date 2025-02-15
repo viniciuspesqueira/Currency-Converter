@@ -20,6 +20,8 @@
   --switch-bg-url: url(./assets/sun.svg);
 }
 
+/* Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .space-mono-regular {
@@ -56,19 +58,28 @@ padding: 0;
 margin: 0;
 }
 
+
 body {
   background: var(--bg-url) no-repeat top center;
   background-color: var(--bgcolor);
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column
 }
 
 main {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+  justify-content: center;
 }
 
+
+
 footer {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 p {
@@ -76,12 +87,19 @@ p {
   color: var(--textcolor);
 }
 
+#coins {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-
-
+#boxes > button {
+  width: 86px;
+  height: 38px;
+}
 
 #title {
-font-weight: bold;
+  font-weight: bold;
 }
 
 li {
