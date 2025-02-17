@@ -62,30 +62,37 @@ margin: 0;
 body {
   background: var(--bg-url) no-repeat top center;
   background-color: var(--bgcolor);
-  display: flex;
-  flex-direction: column
 }
 
 main {
+  margin: auto;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 55px;
-  justify-content: center;
+  height: 710px;
+  align-items: center;
 }
 
-
-
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
 }
 
 p {
   font-family: "Space Mono";
   color: var(--textcolor);
 }
+
+li {
+  color: var(--textcolor);
+  font-family: "Space Mono";
+  list-style: none;
+}
+
+img {
+  width: 100px;
+}
+
 
 #coins {
   display: flex;
@@ -100,13 +107,6 @@ p {
 
 #title {
   font-weight: bold;
+  font-size: 150%;
 }
 
-li {
-  color: var(--textcolor);
-  font-family: "Space Mono";
-}
-
-img {
-  width: 95px;
-}
