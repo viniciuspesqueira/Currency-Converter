@@ -56,8 +56,13 @@
 * {
 padding: 0;
 margin: 0;
+font-family: "Space Mono";
+color: var(--textcolor);
 }
 
+html {
+  font-size: clamp(14px, 2vw, 24px);
+}
 
 body {
   background: var(--bg-url) no-repeat top center;
@@ -78,26 +83,21 @@ footer {
   display: block;
 }
 
-p {
-  font-family: "Space Mono";
-  color: var(--textcolor);
-}
-
 li {
-  color: var(--textcolor);
   font-family: "Space Mono";
   list-style: none;
 }
 
-img {
-  width: 100px;
-}
-
-
 #coins {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.images {
+}
+
+img {
+  width: 10rem;
 }
 
 #boxes > button {
@@ -107,6 +107,17 @@ img {
 
 #title {
   font-weight: bold;
-  font-size: 150%;
+  font-size: 2rem;
 }
 
+#convertersymbol {
+  width: 3rem;
+}
+
+#lastupdate {
+  font-size: 0.5rem;
+}
+
+#equalsymbol {
+  width: 2rem;
+}
