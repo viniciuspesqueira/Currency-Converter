@@ -61,12 +61,16 @@ color: var(--textcolor);
 }
 
 html {
-  font-size: clamp(14px, 2vw, 24px);
+  font-size: clamp(18px, 2vw, 24px);
+  width: 100%;
+  height: 100%;
 }
 
 body {
   background: var(--bg-url) no-repeat top center;
   background-color: var(--bgcolor);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -74,34 +78,55 @@ main {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 55px;
-  height: 710px;
+  margin-top: 3rem;
+  gap: 1.2rem;
   align-items: center;
 }
 
 footer {
-  display: block;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 15px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 14%, #000 28%);
 }
 
-li {
+footer p {
+  font-size: 0.5rem;
+}
+
+footer ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
+  grid-template-rows: repeat(2, auto); /* Cria 2 linhas automáticas */
+  gap: 0.5rem; 
   font-family: "Space Mono";
   list-style: none;
+  font-size: 0.45rem;
 }
+
 
 #coins {
   display: flex;
   flex-direction: row;
+  gap: 1.2rem;
 }
 
 #coins p {
   font-size: 0.8rem;
-}
-
-.images {
+  text-align: center;
 }
 
 img {
-  width: 11rem;
+  width: 8rem;
+}
+
+#boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
 }
 
 #boxes > button {
@@ -115,6 +140,7 @@ img {
 #title {
   font-weight: bold;
   font-size: 1.4rem;
+  text-align: center;
 }
 
 #convertersymbol {
@@ -123,6 +149,7 @@ img {
 
 #lastupdate {
   font-size: 0.5rem;
+  text-align: center;
 }
 
 #equalsymbol {
