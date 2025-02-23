@@ -6,7 +6,7 @@
   --stroke-color: rgba(255, 255, 255, 0.5);
   --stroke-color-hover: white;
   --surface-color: rgba(255, 255, 255, 0.1);
-  --highlight-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/vector/moon.svg);
 }
 
@@ -59,7 +59,6 @@
 padding: 0;
 margin: 0;
 font-family: "Space Mono";
-color: var(--textcolor);
 }
 
 html {
@@ -69,10 +68,12 @@ html {
 }
 
 body {
-  background: var(--bg-url) no-repeat top center;
+  background: url("https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/background_desktop.svg") no-repeat top center;
   background-color: var(--bgcolor);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 main {
@@ -90,13 +91,26 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  gap: 15px;
+  gap: 1rem;
   align-items: center;
   background: var(--footerbgcolor);
 }
 
 footer p {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
+  color: var(--textcolor);
+}
+
+footer li a {
+  text-decoration: none;
+  color: var(--textcolor);
+  transition: 0.3s;
+  padding: 0.5rem;
+}
+
+footer li a:hover {
+  background: var(--highlight-color);
+  border-radius: 50%;
 }
 
 footer ul {
@@ -110,6 +124,7 @@ footer ul {
 }
 
 
+
 #coins {
   display: flex;
   flex-direction: row;
@@ -119,6 +134,7 @@ footer ul {
 #coins p {
   font-size: 0.8rem;
   text-align: center;
+  color: var(--textcolor);
 }
 
 img {
@@ -143,15 +159,17 @@ img {
   font-weight: bold;
   font-size: 1.4rem;
   text-align: center;
+  color: var(--textcolor);
 }
 
 #convertersymbol {
-  width: 2.55rem;
+  width: 2rem;
 }
 
 #lastupdate {
   font-size: 0.5rem;
   text-align: center;
+  color: var(--textcolor);
 }
 
 #equalsymbol {
@@ -160,14 +178,19 @@ img {
 
 #switch {
   position: absolute;
-  top: 1rem;
-  right: 3rem;
+  top: 0.8rem;
+  right: 1.2rem;
 }
 
 #switch button {
-  width: 2rem;
-  height: 2rem;
-  background: var(--switch-bg-url) no-repeat center;
+  background: white var(--switch-bg-url) no-repeat center;
+  background-size: 0.5rem;
   border: 0;
   border-radius: 50%;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+
+#switch button:hover {
+  outline: 0.4rem solid var(--highlight-color);
 }
