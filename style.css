@@ -123,8 +123,6 @@ footer ul {
   font-size: 0.45rem;
 }
 
-
-
 #coins {
   display: flex;
   flex-direction: row;
@@ -145,14 +143,27 @@ img {
   display: flex;
   flex-direction: row;
   gap: 1.2rem;
+  max-width: 100%;
 }
 
-#boxes > button {
-  width: 3rem;
+.button {
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 3rem;
+  max-width: 8rem;
   height: 1.3rem;
-  border-radius: 5px;
+  border-radius: 0.5rem;
+  border: solid 0.1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #00F51E;
   border-color: var(--stroke-color);
   background: var(--surface-color);
+  overflow: hidden;
+}
+
+.button:hover {
+  border-color: #A8F500;
 }
 
 #title {
@@ -167,7 +178,7 @@ img {
 }
 
 #lastupdate {
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   text-align: center;
   color: var(--textcolor);
 }
