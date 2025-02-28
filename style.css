@@ -148,7 +148,7 @@ img {
 
 .button {
   display: inline-block;
-  white-space: nowrap;
+  white-space: nowrap; /* locks the line break */
   min-width: 3rem;
   max-width: 8rem;
   height: 1.3rem;
@@ -159,7 +159,7 @@ img {
   color: #00F51E;
   border-color: var(--stroke-color);
   background: var(--surface-color);
-  overflow: hidden;
+  overflow: hidden; /* Hides the content when the conteiner reaches maximum size */
 }
 
 .button:hover {
