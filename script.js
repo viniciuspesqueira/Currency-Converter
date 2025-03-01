@@ -11,28 +11,32 @@ const inputright = document.getElementById("rightbox");
 
 async function leftToRight() {
 try {
-  const response = await axios.get (API_URL + "USD-BRL");
+  let response = await axios.get (API_URL + "USD-BRL");
   let numbertyped = document.getElementById("leftbox").textContent
+  let convertednumber = response.data.USDBRL.ask * numbertyped
+  let date = new Date();
 
-  document.getElementById("rightbox").textContent = response.data.USDBRL.bid * numbertyped
-  document.getElementById("lastupdate").textContent = "Last update: " + response.data.USDBRL.create_date
+  document.getElementById("rightbox").textContent = convertednumber.toFixed(2);
+  document.getElementById("lastupdate").textContent = "Sale price(ask) - Last update: " + date.toUTCString();
 
 } catch (error) {
-  document.getElementById("rightbox").textContent = "Error loading"
-} 
+  document.getElementById("rightbox").textContent = "Error loading";
+  } 
 }
 
 async function rightToLeft() {
   try {
-    const response = await axios.get (API_URL + "USD-BRL");
+    let response = await axios.get (API_URL + "USD-BRL");
     let numbertyped = document.getElementById("rightbox").textContent
+    let convertednumber = numbertyped / response.data.USDBRL.ask
+    let date = new Date();
 
-    document.getElementById("leftbox").textContent = numbertyped / response.data.USDBRL.bid
-    document.getElementById("lastupdate").textContent = "Last update: " + response.data.USDBRL.create_date
+    document.getElementById("leftbox").textContent = convertednumber.toFixed(2);
+    document.getElementById("lastupdate").textContent = "Sale price(ask) - Last update: " + date.toUTCString();
 
   } catch (error) {
     document.getElementById("leftbox").textContent = "Error loading" 
-  } 
+    } 
   }
 
 inputleft.addEventListener("input", leftToRight)
