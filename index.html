@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/Currency(Symbol).svg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
 </head>
 <body>
     <main>
@@ -25,14 +26,14 @@
             </section>
         </section>
         <section id="boxes">
-            <div class="button" contenteditable="true">
+            <div id="leftbox" class="button" contenteditable="true">
             </div>
             <img id="equalsymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/equal(symbol).svg">
-            <div class="button" contenteditable="true">
+            <div id="rightbox" class="button" contenteditable="true">
             </div>
         </section>
-        <p id="lastupdate">Last Update: 01/02 - 06:56
-        Exchange Rate-API</p>
+        <p id="lastupdate"></p>
+        <p id="teste"></p>
     </main>
     <footer>
             <p id="meetActor">Meet Actor</p>

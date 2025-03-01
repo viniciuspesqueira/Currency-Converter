@@ -152,9 +152,10 @@ img {
   min-width: 3rem;
   max-width: 8rem;
   height: 1.3rem;
+  line-height: 1.3rem;
   border-radius: 0.5rem;
   border: solid 0.1rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   color: #00F51E;
   border-color: var(--stroke-color);
@@ -204,4 +205,8 @@ img {
 
 #switch button:hover {
   outline: 0.4rem solid var(--highlight-color);
+}
+
+#teste {
+  color: var(--textcolor);
 }
