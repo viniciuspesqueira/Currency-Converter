@@ -181,6 +181,8 @@ async function leftToRight() {
       'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
     document.getElementById('rightbox').textContent = 'Error loading';
+    document.getElementById('lastupdate').textContent =
+      'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
   }
 }
 
@@ -200,6 +202,8 @@ async function rightToLeft() {
       'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
     document.getElementById('leftbox').textContent = 'Error loading';
+    document.getElementById('lastupdate').textContent =
+      'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
   }
 }
 
