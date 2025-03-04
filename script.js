@@ -161,8 +161,8 @@ const listcoins = {
   "Solana": "SOL",
   "Binance Coin": "BNB"
 }
-const inputleft = document.getElementById('leftbox');
-const inputright = document.getElementById('rightbox');
+const inputleft = document.getElementById('leftvalue');
+const inputright = document.getElementById('rightvalue');
 
 async function leftToRight() {
   try {
@@ -171,16 +171,18 @@ async function leftToRight() {
     let leftcurrencycode = listcoins[leftcoin];
     let rightcurrencycode = listcoins[rightcoin];
     let response = await axios.get(API_URL + leftcurrencycode + '-' + rightcurrencycode);
-    let numbertyped = document.getElementById('leftbox').textContent;
+    let numbertyped = document.getElementById('leftvalue').textContent;
     let convertednumber = response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
     let date = new Date();
-
-    document.getElementById('rightbox').textContent =
+    
+    document.getElementById('rightcurrencycode').textContent = rightcurrencycode;
+    document.getElementById('leftcurrencycode').textContent = leftcurrencycode
+    document.getElementById('rightvalue').textContent =
       convertednumber.toFixed(2);
     document.getElementById('lastupdate').textContent =
       'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
-    document.getElementById('rightbox').textContent = 'Error loading';
+    document.getElementById('rightvalue').textContent = 'Error loading';
     document.getElementById('lastupdate').textContent =
       'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
   }
@@ -193,19 +195,23 @@ async function rightToLeft() {
     let leftcurrencycode = listcoins[leftcoin];
     let rightcurrencycode = listcoins[rightcoin];
     let response = await axios.get(API_URL + leftcurrencycode + '-' + rightcurrencycode);
-    let numbertyped = document.getElementById('rightbox').textContent;
+    let numbertyped = document.getElementById('rightvalue').textContent;
     let convertednumber = numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask;
     let date = new Date();
 
-    document.getElementById('leftbox').textContent = convertednumber.toFixed(2);
+    document.getElementById('rightcurrencycode').textContent = rightcurrencycode;
+    document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
+    document.getElementById('leftvalue').textContent = convertednumber.toFixed(2);
     document.getElementById('lastupdate').textContent =
       'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
-    document.getElementById('leftbox').textContent = 'Error loading';
+    document.getElementById('leftvalue').textContent = 'Error loading';
     document.getElementById('lastupdate').textContent =
       'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
   }
 }
+
+leftToRight();
 
 inputleft.addEventListener('input', leftToRight);
 inputright.addEventListener('input', rightToLeft);

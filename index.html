@@ -14,24 +14,35 @@
 <body>
     <main>
         <p id="title">Currency Converter</p>
+
         <section id="coins">
             <section class="images">
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/D%C3%B3lar.png">
                 <p id="leftcoin" contenteditable="true">United States Dollar</p>
             </section>
+
             <img id="convertersymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/currency(symbol).svg">
             <section class="images">
+
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/Real.jpg">
                 <p id="rightcoin" contenteditable="true">Brazilian Real</p>
             </section>
         </section>
+
         <section id="boxes">
-            <div id="leftbox" class="button" contenteditable="true">
+            <div class="button">
+                <p id="leftvalue" class="value" contenteditable="true">1</p>
+                <p id="leftcurrencycode"></p>
             </div>
+
             <img id="equalsymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/equal(symbol).svg">
-            <div id="rightbox" class="button" contenteditable="true">
+
+            <div class="button">
+                <p id="rightvalue" class="value" contenteditable="true"></p>
+                <p id="rightcurrencycode"></p>
             </div>
         </section>
+
         <p id="lastupdate"></p>
     </main>
     <footer>

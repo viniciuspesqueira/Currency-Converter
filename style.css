@@ -147,7 +147,9 @@ img {
 }
 
 .button {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   white-space: nowrap; /* locks the line break */
   min-width: 3rem;
   max-width: 8rem;
@@ -167,6 +169,10 @@ img {
 
 .button:hover {
   border-color: #A8F500;
+}
+
+.value {
+  margin-right: 0.3rem;
 }
 
 #title {
