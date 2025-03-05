@@ -161,7 +161,7 @@ img {
   padding-left: 0.2rem;
   font-size: 0.7rem;
   text-align: center;
-  color: #00F51E;
+  color: var(--textcolor);
   border-color: var(--stroke-color);
   background: var(--surface-color);
   overflow: hidden; /* Hides the content when the conteiner reaches maximum size */

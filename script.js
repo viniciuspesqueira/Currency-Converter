@@ -161,8 +161,6 @@ const listcoins = {
   "Solana": "SOL",
   "Binance Coin": "BNB"
 }
-const inputleft = document.getElementById('leftvalue');
-const inputright = document.getElementById('rightvalue');
 
 async function leftToRight() {
   try {
@@ -211,7 +209,18 @@ async function rightToLeft() {
   }
 }
 
-leftToRight();
+let intervalLeftToRight = setInterval(leftToRight, 10000);
 
-inputleft.addEventListener('input', leftToRight);
-inputright.addEventListener('input', rightToLeft);
+document.getElementById('leftvalue').addEventListener('input', () => {
+  clearInterval(intervalLeftToRight);
+  leftToRight();
+  intervalLeftToRight = setInterval(leftToRight, 10000);
+})
+
+document.getElementById('rightvalue').addEventListener('input', () => {
+  clearInterval(intervalLeftToRight);
+  rightToLeft();
+  intervalLeftToRight = setInterval(leftToRight, 10000);
+}) 
+
+
