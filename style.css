@@ -146,13 +146,12 @@ img {
   max-width: 100%;
 }
 
-.button {
+.box {
   display: flex;
   flex-direction: row;
   justify-content: center;
   white-space: nowrap; /* locks the line break */
-  min-width: 3rem;
-  max-width: 8rem;
+  max-width: 5rem;
   height: 1.3rem;
   line-height: 1.3rem;
   border-radius: 0.5rem;
@@ -160,11 +159,8 @@ img {
   padding-right: 0.2rem;
   padding-left: 0.2rem;
   font-size: 0.7rem;
-  text-align: center;
   color: var(--textcolor);
   border-color: var(--stroke-color);
-  background: var(--surface-color);
-  overflow: hidden; /* Hides the content when the conteiner reaches maximum size */
 }
 
 .button:hover {
@@ -172,7 +168,11 @@ img {
 }
 
 .value {
-  margin-right: 0.3rem;
+  width: 100%;
+  text-align: right;
+  color: var(--textcolor);
+  border: none;
+  background: transparent;
 }
 
 #title {

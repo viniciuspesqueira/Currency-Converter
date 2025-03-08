@@ -1,0 +1,79 @@
+
+<xml>
+<USD-BRL>US Dollar/Brazilian Real</USD-BRL>
+<USD-BRLT>US Dollar/Brazilian Real Tourism</USD-BRLT>
+<CAD-BRL>Canadian Dollar/Brazilian Real</CAD-BRL>
+<EUR-BRL>Euro/Brazilian Real</EUR-BRL>
+<GBP-BRL>British Pound/Brazilian Real</GBP-BRL>
+<ARS-BRL>Argentine Peso/Brazilian Real</ARS-BRL>
+<BTC-BRL>Bitcoin/Brazilian Real</BTC-BRL>
+<LTC-BRL>Litecoin/Brazilian Real</LTC-BRL>
+<JPY-BRL>Japanese Yen/Brazilian Real</JPY-BRL>
+<CHF-BRL>Swiss Franc/Brazilian Real</CHF-BRL>
+<AUD-BRL>Australian Dollar/Brazilian Real</AUD-BRL>
+<CNY-BRL>Chinese Yuan/Brazilian Real</CNY-BRL>
+<ILS-BRL>Israeli New Shekel/Brazilian Real</ILS-BRL>
+<ETH-BRL>Ethereum/Brazilian Real</ETH-BRL>
+<XRP-BRL>XRP/Brazilian Real</XRP-BRL>
+<EUR-USD>Euro/US Dollar</EUR-USD>
+<CAD-USD>Canadian Dollar/US Dollar</CAD-USD>
+<GBP-USD>British Pound/US Dollar</GBP-USD>
+<ARS-USD>Argentine Peso/US Dollar</ARS-USD>
+<JPY-USD>Japanese Yen/US Dollar</JPY-USD>
+<CHF-USD>Swiss Franc/US Dollar</CHF-USD>
+<AUD-USD>Australian Dollar/US Dollar</AUD-USD>
+<CNY-USD>Chinese Yuan/US Dollar</CNY-USD>
+<ILS-USD>Israeli New Shekel/US Dollar</ILS-USD>
+<BTC-USD>Bitcoin/US Dollar</BTC-USD>
+<LTC-USD>Litecoin/US Dollar</LTC-USD>
+<ETH-USD>Ethereum/US Dollar</ETH-USD>
+<XRP-USD>XRP/US Dollar</XRP-USD>
+<BRL-USD>Brazilian Real/US Dollar</BRL-USD>
+<BRL-EUR>Brazilian Real/Euro</BRL-EUR>
+<USD-EUR>US Dollar/Euro</USD-EUR>
+<CAD-EUR>Canadian Dollar/Euro</CAD-EUR>
+<GBP-EUR>British Pound/Euro</GBP-EUR>
+<ARS-EUR>Argentine Peso/Euro</ARS-EUR>
+<JPY-EUR>Japanese Yen/Euro</JPY-EUR>
+<CHF-EUR>Swiss Franc/Euro</CHF-EUR>
+<AUD-EUR>Australian Dollar/Euro</AUD-EUR>
+<CNY-EUR>Chinese Yuan/Euro</CNY-EUR>
+<ILS-EUR>Israeli New Shekel/Euro</ILS-EUR>
+<BTC-EUR>Bitcoin/Euro</BTC-EUR>
+<LTC-EUR>Litecoin/Euro</LTC-EUR>
+<ETH-EUR>Ethereum/Euro</ETH-EUR>
+<XRP-EUR>XRP/Euro</XRP-EUR>
+<DOGE-BRL>Dogecoin/Brazilian Real</DOGE-BRL>
+<DOGE-EUR>Dogecoin/Euro</DOGE-EUR>
+<DOGE-USD>Dogecoin/US Dollar</DOGE-USD>
+<USD-JPY>US Dollar/Japanese Yen</USD-JPY>
+<USD-CHF>US Dollar/Swiss Franc</USD-CHF>
+<USD-CAD>US Dollar/Canadian Dollar</USD-CAD>
+<NZD-USD>New Zealand Dollar/US Dollar</NZD-USD>
+<USD-ZAR>US Dollar/South African Rand</USD-ZAR>
+<USD-TRY>US Dollar/Turkish Lira</USD-TRY>
+<USD-MXN>US Dollar/Mexican Peso</USD-MXN>
+<USD-PLN>US Dollar/Polish Zloty</USD-PLN>
+<USD-SEK>US Dollar/Swedish Krona</USD-SEK>
+<USD-SGD>US Dollar/Singapore Dollar</USD-SGD>
+<USD-DKK>US Dollar/Danish Krone</USD-DKK>
+<USD-NOK>US Dollar/Norwegian Krone</USD-NOK>
+<USD-ILS>US Dollar/Israeli New Shekel</USD-ILS>
+<USD-HUF>US Dollar/Hungarian Forint</USD-HUF>
+<USD-CZK>US Dollar/Czech Koruna</USD-CZK>
+<USD-THB>US Dollar/Thai Baht</USD-THB>
+<USD-AED>US Dollar/Emirati Dirham</USD-AED>
+<USD-JOD>US Dollar/Jordanian Dinar</USD-JOD>
+<USD-KWD>US Dollar/Kuwaiti Dinar</USD-KWD>
+<USD-HKD>US Dollar/Hong Kong Dollar</USD-HKD>
+<USD-SAR>US Dollar/Saudi Riyal</USD-SAR>
+<USD-INR>US Dollar/Indian Rupee</USD-INR>
+<USD-KRW>US Dollar/South Korean Won</USD-KRW>
+<FJD-USD>Fijian Dollar/US Dollar</FJD-USD>
+<GHS-USD>Ghanaian Cedi/US Dollar</GHS-USD>
+<KYD-USD>Cayman Islands Dollar/US Dollar</KYD-USD>
+<SGD-USD>Singapore Dollar/US Dollar</SGD-USD>
+<USD-ALL>US Dollar/Albanian Lek</USD-ALL>
+<USD-AMD>US Dollar/Armenian Dram</USD-AMD>
+<USD-ANG>US Dollar/Netherlands Antillean Guilder</USD-ANG>
+</xml>

@@ -18,7 +18,7 @@
         <section id="coins">
             <section class="images">
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/D%C3%B3lar.png">
-                <p id="leftcoin" contenteditable="true">United States Dollar</p>
+                <p id="leftcoin" contenteditable="true">US Dollar</p>
             </section>
 
             <img id="convertersymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/currency(symbol).svg">
@@ -30,15 +30,15 @@
         </section>
 
         <section id="boxes">
-            <div class="button">
-                <p id="leftvalue" class="value" contenteditable="true">1.00</p>
+            <div class="box">
+                <input id="leftvalue" class="value" type="number" min="0" step="any" value="1" >
                 <p id="leftcurrencycode"></p>
             </div>
 
             <img id="equalsymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/equal(symbol).svg">
 
-            <div class="button">
-                <p id="rightvalue" class="value" contenteditable="true"></p>
+            <div class="box">
+                <input id="rightvalue" class="value" type="number" min="0" step="any" >
                 <p id="rightcurrencycode"></p>
             </div>
         </section>
