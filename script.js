@@ -91,29 +91,16 @@ async function rightToLeft() {
 
 leftToRight();
 
-let intervalLeftToRight = setInterval(leftToRight, 10000);
+let intervalConvertion = setInterval(leftToRight, 10000)
 
-document.getElementById('leftvalue').addEventListener('input', () => {
-  clearInterval(intervalLeftToRight);
-  leftToRight();
-  intervalLeftToRight = setInterval(leftToRight, 10000);
-});
+function intervalLeftToRightFunction() {
+  clearInterval(intervalConvertion)
+  leftToRight()
+  setInterval(leftToRight, 10000)
+}
 
-document.getElementById('rightvalue').addEventListener('input', () => {
-  clearInterval(intervalLeftToRight);
-  rightToLeft();
-  intervalLeftToRight = setInterval(leftToRight, 10000);
-});
-
-document.getElementById('leftcoin').addEventListener('input', () => {
-  clearInterval(intervalLeftToRight);
-  leftToRight();
-  intervalLeftToRight = setInterval(leftToRight, 10000);
-});
-
-document.getElementById('rightcoin').addEventListener('input', () => {
-  clearInterval(intervalLeftToRight);
-  rightToLeft();
-  intervalLeftToRight = setInterval(leftToRight, 10000);
-});
-
+function intervalRightToLeftFunction() {
+  clearInterval(intervalConvertion)
+  rightToLeft()
+  setInterval(leftToRight, 10000)
+}
