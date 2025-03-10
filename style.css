@@ -161,9 +161,12 @@ img {
   font-size: 0.7rem;
   color: var(--textcolor);
   border-color: var(--stroke-color);
+  background-color: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.button:hover {
+.box:hover {
   border-color: #A8F500;
 }
 
