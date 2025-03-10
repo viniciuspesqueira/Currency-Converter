@@ -4,7 +4,7 @@ function toggleMode() {
   html.classList.toggle('light');
 }
 
-const API_URL = 'https://economia.awesomeapi.com.br/json/last/';
+const API_URL = "https://economia.awesomeapi.com.br/json/last/";
 
 async function leftToRight() {
   try {
@@ -91,16 +91,5 @@ async function rightToLeft() {
 
 leftToRight();
 
-let intervalConvertion = setInterval(leftToRight, 10000)
+setInterval(leftToRight, 10000)
 
-function intervalLeftToRightFunction() {
-  clearInterval(intervalConvertion)
-  leftToRight()
-  setInterval(leftToRight, 10000)
-}
-
-function intervalRightToLeftFunction() {
-  clearInterval(intervalConvertion)
-  rightToLeft()
-  setInterval(leftToRight, 10000)
-}

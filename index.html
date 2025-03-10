@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,27 +18,27 @@
         <section id="coins">
             <section class="images">
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/D%C3%B3lar.png">
-                <p id="leftcoin" oninput="intervalLeftToRightFunction()" contenteditable="true">US Dollar</p>
+                <p id="leftcoin" oninput="leftToRight()" contenteditable="true">US Dollar</p>
             </section>
 
             <img id="convertersymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/currency(symbol).svg">
             <section class="images">
 
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/Real.jpg">
-                <p id="rightcoin" oninput="intervalRightToLeftFunction()" contenteditable="true">Brazilian Real</p>
+                <p id="rightcoin" oninput="rightToLeft()" contenteditable="true">Brazilian Real</p>
             </section>
         </section>
 
         <section id="boxes">
             <div class="box">
-                <input id="leftvalue" class="value" oninput="intervalLeftToRightFunction()" type="number" min="0" step="any" value="1" >
+                <input id="leftvalue" class="value" oninput="leftToRight()" type="number" min="0" step="any" value="1" >
                 <p id="leftcurrencycode"></p>
             </div>
 
             <img id="equalsymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/equal(symbol).svg">
 
             <div class="box">
-                <input id="rightvalue" class="value" oninput="intervalRightToLeftFunction()" type="number" min="0" step="any" >
+                <input id="rightvalue" class="value" oninput="rightToLeft()" type="number" min="0" step="any" >
                 <p id="rightcurrencycode"></p>
             </div>
         </section>
