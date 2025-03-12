@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/Currency(Symbol).svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
 </head>
 <body>
@@ -16,16 +19,16 @@
         <p id="title">Currency Converter</p>
 
         <section id="coins">
-            <section class="images">
+            <section class="coinsection">
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/D%C3%B3lar.png">
-                <p id="leftcoin" oninput="leftToRight()" contenteditable="true">US Dollar</p>
+                <input id="leftcoin" class="coinname" onnput="leftToRight()" value="US Dollar" >
             </section>
 
             <img id="convertersymbol" src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/currency(symbol).svg">
-            <section class="images">
+            <section class="coinsection">
 
                 <img src="https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/Moedas/Real.jpg">
-                <p id="rightcoin" oninput="rightToLeft()" contenteditable="true">Brazilian Real</p>
+                <input id="rightcoin" class="coinname" oninput="rightToLeft()" value="Brazilian Real">
             </section>
         </section>
 

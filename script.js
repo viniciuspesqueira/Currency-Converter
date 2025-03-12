@@ -6,6 +6,41 @@ function toggleMode() {
 
 const API_URL = "https://economia.awesomeapi.com.br/json/last/";
 
+$( function() {
+  var availableCoins = [
+    "Albanian Lek", "Argentine Peso", "Armenian Dram", "Australian Dollar", 
+    "Bitcoin", "Brazilian Real", "Brazilian Real Tourism", "British Pound", 
+    "Canadian Dollar", "Cayman Islands Dollar", "Chinese Yuan", "Czech Koruna", 
+    "Danish Krone", "Dogecoin", "Emirati Dirham", "Ethereum", "Euro", 
+    "Fijian Dollar", "Ghanaian Cedi", "Hong Kong Dollar", "Hungarian Forint", 
+    "Indian Rupee", "Israeli New Shekel", "Japanese Yen", "Jordanian Dinar", 
+    "Kuwaiti Dinar", "Litecoin", "Mexican Peso", "Netherlands Antillean Guilder", 
+    "New Zealand Dollar", "Norwegian Krone", "Polish Zloty", "Saudi Riyal", 
+    "Singapore Dollar", "South African Rand", "South Korean Won", "Swedish Krona", 
+    "Swiss Franc", "Thai Baht", "Turkish Lira", "US Dollar", "XRP"
+];
+
+  $("#leftcoin").on("click", function() {
+    $("#leftcoin").autocomplete({
+        source: availableCoins,
+        minLength: 0,
+        select: () => {
+          leftToRight()
+        }
+    }).autocomplete("search", ""); 
+  });
+  $("#rightcoin").on("click", function() {
+    $("#rightcoin").autocomplete({
+        source: availableCoins,
+        minLength: 0,
+        select: () => {
+          rightToLeft()
+        }
+    }).autocomplete("search", ""); 
+  });
+
+} );
+
 async function leftToRight() {
   try {
     let responsexml = await fetch("currencies.xml");
@@ -13,16 +48,15 @@ async function leftToRight() {
     let parser = new DOMParser();
     let currencies = parser.parseFromString(str, "application/xml");
     let currencycodes = currencies.getElementsByTagName("*");
-    let currencycode
 
     for (let i = 1; i < currencycodes.length; i++) {
 
-      if ((document.getElementById('leftcoin').textContent) + "/" + document.getElementById('rightcoin').textContent === currencycodes[i].textContent) {
-        currencycode = currencycodes[i].tagName;
+      if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
+        var currencycode = currencycodes[i].tagName;
         break
       } else {
-        console.log(document.getElementById('lastupdate').textContent = 
-          'Conversion between this currency pair is not available. Please change the pair and try a new conversion');
+        document.getElementById('lastupdate').textContent =
+      'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
       }
     } 
 
@@ -56,12 +90,11 @@ async function rightToLeft() {
     let parser = new DOMParser();
     let currencies = parser.parseFromString(str, "application/xml");
     let currencycodes = currencies.getElementsByTagName("*");
-    let currencycode
 
     for (let i = 1; i < currencycodes.length; i++) {
 
-      if ((document.getElementById('leftcoin').textContent) + "/" + document.getElementById('rightcoin').textContent === currencycodes[i].textContent) {
-        currencycode = currencycodes[i].tagName;
+      if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
+        var currencycode = currencycodes[i].tagName;
         break
       } 
     }
