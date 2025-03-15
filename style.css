@@ -87,7 +87,8 @@ main {
 }
 
 img {
-  width: 6rem;
+  max-width: 6rem;
+  max-height: 3rem;
 }
 
 footer {

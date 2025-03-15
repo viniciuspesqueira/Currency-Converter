@@ -67,6 +67,7 @@ async function leftToRight() {
     let date = new Date();
 
     document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
+    document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
     document.getElementById('rightcurrencycode').textContent =
       rightcurrencycode;
     document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
@@ -106,6 +107,7 @@ async function rightToLeft() {
       numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask;
     let date = new Date();
 
+    document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
     document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
     document.getElementById('rightcurrencycode').textContent =
       rightcurrencycode;
