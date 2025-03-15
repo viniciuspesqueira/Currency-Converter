@@ -38,8 +38,7 @@ $( function() {
         }
     }).autocomplete("search", ""); 
   });
-
-} );
+});
 
 async function leftToRight() {
   try {
@@ -54,14 +53,11 @@ async function leftToRight() {
       if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
         var currencycode = currencycodes[i].tagName;
         break
-      } else {
-        document.getElementById('lastupdate').textContent =
-      'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
       }
-    } 
+    }
 
-    let leftcurrencycode = currencycode.slice(0, 3);
-    let rightcurrencycode = currencycode.slice(4);
+    let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
+    let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
     let response = await axios.get(
       API_URL + currencycode
     );
@@ -70,6 +66,7 @@ async function leftToRight() {
       response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
     let date = new Date();
 
+    document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
     document.getElementById('rightcurrencycode').textContent =
       rightcurrencycode;
     document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
@@ -99,8 +96,8 @@ async function rightToLeft() {
       } 
     }
 
-    let leftcurrencycode = currencycode.slice(0, 3);
-    let rightcurrencycode = currencycode.slice(4);
+    let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
+    let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
     let response = await axios.get(
       API_URL + currencycode
     );
@@ -109,6 +106,7 @@ async function rightToLeft() {
       numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask;
     let date = new Date();
 
+    document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
     document.getElementById('rightcurrencycode').textContent =
       rightcurrencycode;
     document.getElementById('leftcurrencycode').textContent = leftcurrencycode;

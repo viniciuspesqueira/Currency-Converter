@@ -149,6 +149,10 @@ footer ul {
   font-size: 0.6rem;
 }
 
+.coinname:hover {
+  text-decoration: underline #A8F500;
+}
+
 .ui-autocomplete {
   max-height: 10rem;
   overflow-y: auto;
@@ -158,6 +162,7 @@ footer ul {
   font-size: 0.6rem;
   border: solid 0.1px;
   border-radius: 5px;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.05);
   color: black;
   backdrop-filter: blur(4px);
