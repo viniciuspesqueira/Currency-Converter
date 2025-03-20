@@ -95,37 +95,37 @@ footer {
   height: max-content;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding-top: 2rem;
   gap: 1rem;
   align-items: center;
   background: var(--footerbgcolor);
-}
-
-footer p {
   font-size: 0.6rem;
   color: var(--textcolor);
 }
 
 footer li a {
-  text-decoration: none;
   color: var(--textcolor);
   transition: 0.3s;
-  padding: 0.5rem;
+  border-radius: 50%;
+  padding: 0.4rem;
+  padding-top: 0.6rem;
 }
 
 footer li a:hover {
   background: var(--highlight-color);
-  border-radius: 50%;
 }
 
 footer ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 0.5rem; 
-  font-family: "Space Mono";
   list-style: none;
-  font-size: 0.45rem;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 2.2rem);
+  grid-template-rows: repeat(2, 2.2rem);
+}
+
+ion-icon {
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 #coins {
@@ -237,7 +237,7 @@ footer ul {
   right: 1.2rem;
 }
 
-#switch button {
+#switch div {
   background: white var(--switch-bg-url) no-repeat center;
   background-size: 0.5rem;
   border: 0;
@@ -246,6 +246,6 @@ footer ul {
   transition: 0.3s;
 }
 
-#switch button:hover {
+#switch div:hover {
   outline: 0.4rem solid var(--highlight-color);
 }

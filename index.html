@@ -20,14 +20,14 @@
 
         <section id="coins">
             <section class="coinsection">
-                <img id="leftimage" src="assets/Moedas/US Dollar.webp">
+                <img id="leftimage" alt="leftcoinimage" src="assets/Moedas/US Dollar.webp">
                 <input id="leftcoin" class="coinname" oninput="leftToRight()" value="US Dollar" >
             </section>
 
-            <img id="convertersymbol" src="assets/vector/currency(symbol).svg">
+            <img id="convertersymbol" alt="convertersymbolimage" src="assets/vector/currency(symbol).svg">
 
             <section class="coinsection">
-                <img id="rightimage" src="assets/Moedas/Brazilian Real.webp">
+                <img id="rightimage" alt="rightcoinimage" src="assets/Moedas/Brazilian Real.webp">
                 <input id="rightcoin" class="coinname" oninput="rightToLeft()" value="Brazilian Real">
             </section>
         </section>
@@ -35,14 +35,14 @@
         <section id="boxes">
             <div class="box">
                 <input id="leftvalue" class="value" oninput="leftToRight()" type="number" min="0" step="any" value="1" >
-                <p id="leftcurrencycode"></p>
+                <label for="leftvalue" id="leftcurrencycode"></label>
             </div>
 
-            <img id="equalsymbol" src="assets/vector/equal(symbol).svg">
+            <img id="equalsymbol" alt="equalsymbolimage" src="assets/vector/equal(symbol).svg">
 
             <div class="box">
                 <input id="rightvalue" class="value" oninput="rightToLeft()" type="number" min="0" step="any" >
-                <p id="rightcurrencycode"></p>
+                <label for="rightvalue" id="rightcurrencycode"></label>
             </div>
         </section>
 
@@ -52,26 +52,43 @@
             <p id="meetActor">Meet Actor</p>
             <ul>
                 <li class="link">
-                    <a href="https://www.linkedin.com/in/viniciuspesqueira/" target="_blank">Linkedin</a>
+                    <a href="https://www.linkedin.com/in/viniciuspesqueira/" target="_blank">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
                 </li>
 
                 <li class="link">
-                    <a href="https://github.com/viniciuspesqueira" target="_blank">GitHub</a>
+                    <a href="https://github.com/viniciuspesqueira" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
                 </li>
 
                 <li class="link">
-                    <a href="https://www.instagram.com/viniciuspesqueiraweb" target="_blank">Instagram</a>
+                    <a href="https://instagram.com/viniciuspesqueiraweb" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
                 </li>
 
                 <li class="link">
-                    <a href="https://www.behance.net/viniciuspesqueira" target="_blank">Behance</a>
+                    <a href="https://www.behance.net/viniciuspesqueira" target="_blank">
+                        <ion-icon name="logo-behance"></ion-icon>
+                    </a>
                 </li>
             </ul>
     </footer>
 
     <div id="switch" onclick="toggleMode()">
-        <button></button>
+        <div></div>
     </div>
+
+    <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <script src="./script.js"></script>
 </body>
