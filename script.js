@@ -20,7 +20,7 @@ $( function() {
     "Swiss Franc", "Thai Baht", "Turkish Lira", "US Dollar", "XRP"
 ];
 
-  $("#leftcoin").on("click", function() {
+  $("#changecoinleft").on("click", function() {
     $("#leftcoin").autocomplete({
         source: availableCoins,
         minLength: 0,
@@ -29,7 +29,7 @@ $( function() {
         }
     }).autocomplete("search", ""); 
   });
-  $("#rightcoin").on("click", function() {
+  $("#changecoinright").on("click", function() {
     $("#rightcoin").autocomplete({
         source: availableCoins,
         minLength: 0,

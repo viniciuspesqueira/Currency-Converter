@@ -147,11 +147,20 @@ ion-icon {
   text-align: center;
   border: none;
   background: transparent;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
-.coinname:hover {
-  text-decoration: underline #A8F500;
+.changecoin {
+  color: var(--textcolor);
+  width: auto;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: 0.5rem;
+}
+
+.changecoin:hover {
+  color: #00f571;
 }
 
 .ui-autocomplete {
