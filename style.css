@@ -142,6 +142,7 @@ ion-icon {
 
 .coinname {
   color: var(--textcolor);
+  font-weight: bold;
   font-size: 0.5rem;
   width: auto;
   text-align: center;
