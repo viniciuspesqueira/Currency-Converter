@@ -40,22 +40,26 @@ $( function() {
   });
 });
 
+async function getData() {
+  let responsexml = await fetch("currencies.xml");
+  let str = await responsexml.text();  
+  let parser = new DOMParser();
+  let currencies = parser.parseFromString(str, "application/xml");
+  let currencycodes = currencies.getElementsByTagName("*");
+
+  for (let i = 1; i < currencycodes.length; i++) {
+
+    if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
+      var currencycode = currencycodes[i].tagName;
+      break
+    }
+  }
+  return currencycode
+}
+
 async function leftToRight() {
   try {
-    let responsexml = await fetch("currencies.xml");
-    let str = await responsexml.text();  
-    let parser = new DOMParser();
-    let currencies = parser.parseFromString(str, "application/xml");
-    let currencycodes = currencies.getElementsByTagName("*");
-
-    for (let i = 1; i < currencycodes.length; i++) {
-
-      if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
-        var currencycode = currencycodes[i].tagName;
-        break
-      }
-    }
-
+    let currencycode = await getData()
     let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
     let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
     let response = await axios.get(
@@ -83,20 +87,7 @@ async function leftToRight() {
 
 async function rightToLeft() {
   try {
-    let responsexml = await fetch("currencies.xml");
-    let str = await responsexml.text();  
-    let parser = new DOMParser();
-    let currencies = parser.parseFromString(str, "application/xml");
-    let currencycodes = currencies.getElementsByTagName("*");
-
-    for (let i = 1; i < currencycodes.length; i++) {
-
-      if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
-        var currencycode = currencycodes[i].tagName;
-        break
-      } 
-    }
-
+    let currencycode = await getData()
     let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
     let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
     let response = await axios.get(
