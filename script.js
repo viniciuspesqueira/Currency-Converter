@@ -5,6 +5,8 @@ function toggleMode() {
 }
 
 const API_URL = "https://economia.awesomeapi.com.br/json/last/";
+let numbertyped = document.getElementById('leftvalue').value
+let convertednumber
 
 $( function() {
   var availableCoins = [
@@ -20,21 +22,22 @@ $( function() {
     "Swiss Franc", "Thai Baht", "Turkish Lira", "US Dollar", "XRP"
 ];
 
-  $("#changecoinleft").on("click", function() {
-    $("#leftcoin").autocomplete({
-        source: availableCoins,
-        minLength: 0,
-        select: () => {
-          leftToRight()
-        }
-    }).autocomplete("search", ""); 
-  });
   $("#changecoinright").on("click", function() {
     $("#rightcoin").autocomplete({
         source: availableCoins,
         minLength: 0,
         select: () => {
-          rightToLeft()
+          Conversion()
+        }
+    }).autocomplete("search", ""); 
+  });
+
+  $("#changecoinleft").on("click", function() {
+    $("#leftcoin").autocomplete({
+        source: availableCoins,
+        minLength: 0,
+        select: () => {
+          Conversion()
         }
     }).autocomplete("search", ""); 
   });
@@ -57,25 +60,40 @@ async function getData() {
   return currencycode
 }
 
-async function leftToRight() {
+document.getElementById('leftvalue').addEventListener('input', () => {
+  numbertyped = document.getElementById('leftvalue').value
+  Conversion();
+})
+
+document.getElementById('rightvalue').addEventListener('input', () => {
+  numbertyped = document.getElementById('rightvalue').value
+  Conversion();
+})
+
+async function Conversion() {
   try {
     let currencycode = await getData()
+    let date = new Date();
     let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
     let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
     let response = await axios.get(
       API_URL + currencycode
     );
-    let numbertyped = document.getElementById('leftvalue').value;
-    let convertednumber =
-      response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
-    let date = new Date();
+
+    if (numbertyped === document.getElementById('leftvalue').value) {
+      convertednumber = response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
+      document.getElementById('rightvalue').value = convertednumber.toFixed(2);
+    } if (numbertyped === document.getElementById('rightvalue').value) {
+      convertednumber = numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask
+      document.getElementById('leftvalue').value = convertednumber.toFixed(2);
+    }
 
     document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
     document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
-    document.getElementById('rightcurrencycode').textContent =
-      rightcurrencycode;
+
+    document.getElementById('rightcurrencycode').textContent = rightcurrencycode;
     document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
-    document.getElementById('rightvalue').value = convertednumber.toFixed(2);
+
     document.getElementById('lastupdate').textContent =
       'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
@@ -85,35 +103,6 @@ async function leftToRight() {
   }
 }
 
-async function rightToLeft() {
-  try {
-    let currencycode = await getData()
-    let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
-    let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
-    let response = await axios.get(
-      API_URL + currencycode
-    );
-    let numbertyped = document.getElementById('rightvalue').value;
-    let convertednumber =
-      numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask;
-    let date = new Date();
+Conversion();
 
-    document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
-    document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
-    document.getElementById('rightcurrencycode').textContent =
-      rightcurrencycode;
-    document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
-    document.getElementById('leftvalue').value = convertednumber.toFixed(2);
-    document.getElementById('lastupdate').textContent =
-      'Sale price(ask) - Last update: ' + date.toUTCString();
-  } catch (error) {
-    document.getElementById('leftvalue').value = 'Error loading';
-    document.getElementById('lastupdate').textContent =
-      'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
-  }
-}
-
-leftToRight();
-
-setInterval(leftToRight, 10000)
 
