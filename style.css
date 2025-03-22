@@ -112,7 +112,7 @@ footer li a {
 }
 
 footer li a:hover {
-  background: var(--highlight-color);
+  background: #41f50065;
 }
 
 footer ul {
@@ -155,13 +155,22 @@ ion-icon {
   color: var(--textcolor);
   width: auto;
   text-align: center;
-  border: none;
+  border-radius: 10px;
+  border: solid 0.1rem;
+  padding: 0.1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   background: transparent;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
+  border-color: var(--stroke-color);
+  background-color: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: 0.5s;
 }
 
 .changecoin:hover {
-  color: #00f571;
+  border-color: #A8F500;
 }
 
 .ui-autocomplete {
@@ -205,6 +214,7 @@ ion-icon {
   background-color: var(--surface-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  transition: 0.5s;
 }
 
 .box:hover {
@@ -257,5 +267,5 @@ ion-icon {
 }
 
 #switch div:hover {
-  outline: 0.4rem solid var(--highlight-color);
+  outline: 0.4rem solid #40F500;
 }
