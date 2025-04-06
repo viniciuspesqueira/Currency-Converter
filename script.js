@@ -99,3 +99,5 @@ document.getElementById('rightvalue').addEventListener('input', () => {
   numbertyped = document.getElementById('rightvalue').value
   Conversion();
 })
+
+setInterval(Conversion, 10000);

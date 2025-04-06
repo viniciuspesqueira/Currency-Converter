@@ -8,6 +8,10 @@
   --surface-color: rgba(255, 255, 255, 0.1);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/vector/moon.svg);
+  --linkedin: url(./assets/vector/linkedin_white.svg);
+  --instagram: url(./assets/vector/instagram_white.svg);
+  --behance: url(./assets/vector/github_white.svg);
+  --github: url(./assets/vector/behance_white.svg);
 }
 
 .light {
@@ -20,11 +24,29 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/vector/sun.svg);
+  --linkedin: url(./assets/vector/linkedin.svg);
+  --instagram: url(./assets/vector/instagram.svg);
+  --behance: url(./assets/vector/github.svg);
+  --github: url(./assets/vector/behance.svg);
 }
 
 /* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@media (max-width: 390px) {
+  body {
+    background: url(assets/vector/background_mobile.svg) no-repeat center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 390px) {
+  body {
+    background: url(assets/vector/background_desktop.svg) no-repeat center;
+    background-size: cover;
+  }
+}
 
 .space-mono-regular {
   font-family: "Space Mono", serif;
@@ -56,24 +78,16 @@
 }
 
 * {
-padding: 0;
-margin: 0;
-font-family: "Space Mono";
-}
-
-html {
-  font-size: clamp(18px, 2vw, 24px);
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Space Mono";
 }
 
 body {
-  background: url("https://raw.githubusercontent.com/viniciuspesqueira/Currency-Converter/refs/heads/master/assets/vector/background_desktop.svg") no-repeat top center;
   background-color: var(--bgcolor);
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
 }
 
 main {
@@ -81,57 +95,48 @@ main {
   width: 50%;
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
-  gap: 1.2rem;
+  margin-top: 3.6rem;
+  gap: 1.44rem;
   align-items: center;
-}
-
-img {
-  max-width: 6rem;
-  max-height: 3rem;
 }
 
 footer {
-  height: max-content;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  gap: 1rem;
+  padding-top: 2.4rem;
+  gap: 1.2rem;
   align-items: center;
   background: var(--footerbgcolor);
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: var(--textcolor);
-}
-
-footer li a {
-  color: var(--textcolor);
-  transition: 0.3s;
-  border-radius: 50%;
-  padding: 0.4rem;
-  padding-top: 0.6rem;
-}
-
-footer li a:hover {
-  background: #41f50065;
 }
 
 footer ul {
   list-style: none;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, 2.2rem);
-  grid-template-rows: repeat(2, 2.2rem);
+  grid-template-columns: repeat(2, 2.64rem);
+  grid-template-rows: repeat(2, 2.64rem);
 }
 
-ion-icon {
-  width: 0.8rem;
-  height: 0.8rem;
+footer a {
+  display: flex;
+  color: var(--textcolor);
+  font-size: 0.96rem;
+  padding: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+footer a:hover {
+  border-radius: 50%;
+  background: #41f50065;
 }
 
 #coins {
   display: flex;
   flex-direction: row;
-  gap: 1.2rem;
 }
 
 .coinsection {
@@ -142,8 +147,7 @@ ion-icon {
 
 .coinname {
   color: var(--textcolor);
-  font-weight: bold;
-  font-size: 0.5rem;
+  font-weight: 500;
   width: auto;
   text-align: center;
   border: none;
@@ -151,22 +155,25 @@ ion-icon {
   font-size: 0.8rem;
 }
 
+.coinimage {
+  max-width: 7.2rem;
+  max-height: 3.6rem;
+}
+
 .changecoin {
   color: var(--textcolor);
   width: auto;
-  text-align: center;
   border-radius: 10px;
-  border: solid 0.1rem;
-  padding: 0.1rem;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  background: transparent;
-  font-size: 0.4rem;
+  border: solid 0.12rem;
+  padding: 0.12rem;
+  padding-left: 0.24rem;
+  padding-right: 0.24rem;
+  font-size: 0.6rem;
   border-color: var(--stroke-color);
   background-color: var(--surface-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: 0.5s;
+  transition: background 0.5s;
 }
 
 .changecoin:hover {
@@ -199,16 +206,16 @@ ion-icon {
 .box {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0.6rem;
   justify-content: center;
-  width: 6rem;
+  width: 8.4rem;
   height: 1.3rem;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
   border-radius: 10px;
-  border: solid 0.1rem;
-  padding-right: 0.2rem;
-  padding-left: 0.2rem;
-  font-size: 0.5rem;
+  border: solid 0.12rem;
+  padding-right: 0.24rem;
+  padding-left: 0.24rem;
+  font-size: 0.6rem;
   color: var(--textcolor);
   border-color: var(--stroke-color);
   background-color: var(--surface-color);
@@ -227,45 +234,54 @@ ion-icon {
   color: var(--textcolor);
   border: none;
   background: transparent;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
+}
+
+.box label {
+  font-size: 0.72rem;
 }
 
 #title {
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.68rem;
   text-align: center;
   color: var(--textcolor);
 }
 
 #convertersymbol {
-  width: 2rem;
+  width: 2.4rem;
 }
 
 #lastupdate {
-  font-size: 0.4rem;
+  font-size: 0.6rem;
   text-align: center;
   color: var(--textcolor);
 }
 
+#meetactor {
+  font-size: 0.96rem;
+}
+
 #equalsymbol {
-  width: 1.2rem;
+  width: 1.44rem;
 }
 
 #switch {
   position: absolute;
-  top: 0.8rem;
-  right: 1.2rem;
+  top: 0.96rem;
+  right: 1.44rem;
 }
 
 #switch div {
   background: white var(--switch-bg-url) no-repeat center;
-  background-size: 0.5rem;
+  background-size: 0.6rem;
   border: 0;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.6rem;
   transition: 0.3s;
 }
 
 #switch div:hover {
-  outline: 0.4rem solid #41f50065;
+  outline: 0.48rem solid #41f50065;
 }
+

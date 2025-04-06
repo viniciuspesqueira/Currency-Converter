@@ -17,7 +17,7 @@
 
         <section id="coins">
             <section class="coinsection">
-                <img id="leftimage" alt="leftcoinimage" src="assets/Moedas/US Dollar.webp">
+                <img class="coinimage" id="leftimage" alt="leftcoinimage" src="assets/Moedas/US Dollar.webp">
                 <input id="leftcoin" class="coinname" value="US Dollar" >
                 <label for="leftcoin" class="changecoin" id="changecoinleft">Change coin</label>
             </section>
@@ -25,7 +25,7 @@
             <img id="convertersymbol" alt="convertersymbolimage" src="assets/vector/currency(symbol).svg">
 
             <section class="coinsection">
-                <img id="rightimage" alt="rightcoinimage" src="assets/Moedas/Brazilian Real.webp">
+                <img class="coinimage" id="rightimage" alt="rightcoinimage" src="assets/Moedas/Brazilian Real.webp">
                 <input id="rightcoin" class="coinname" value="Brazilian Real">
                 <label for="rightcoin" class="changecoin" id="changecoinright">Change coin</label>
             </section>
@@ -47,47 +47,50 @@
 
         <p id="lastupdate"></p>
     </main>
-    <footer>
-            <p id="meetActor">Meet Actor</p>
-            <ul>
-                <li class="link">
-                    <a href="https://www.linkedin.com/in/viniciuspesqueira/" aria-label="Linkedin" target="_blank">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                    </a>
-                </li>
-
-                <li class="link">
-                    <a href="https://github.com/viniciuspesqueira" aria-label="GitHub" target="_blank">
-                        <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                </li>
-
-                <li class="link">
-                    <a href="https://instagram.com/viniciuspesqueiraweb" aria-label="Instagram" target="_blank">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                </li>
-
-                <li class="link">
-                    <a href="https://www.behance.net/viniciuspesqueira" aria-label="Behance" target="_blank">
-                        <ion-icon name="logo-behance"></ion-icon>
-                    </a>
-                </li>
-            </ul>
-    </footer>
 
     <div id="switch" onclick="toggleMode()">
         <div></div>
     </div>
 
+    <footer>
+            <p id="meetactor">Meet Actor</p>
+            <ul>
+                <li class="link">
+                    <a id="linkedin" class="social-link" href="https://www.linkedin.com/in/viniciuspesqueira/" aria-label="Linkedin" target="_blank">
+                        <ion-icon name="logo-linkedin" target="_blank"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a id="github" class="social-link" href="https://github.com/viniciuspesqueira" aria-label="GitHub" target="_blank">
+                        <ion-icon name="logo-github" target="_blank"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a id="instagram" class="social-link" href="https://instagram.com/viniciuspesqueiraweb" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-instagram" target="_blank"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a id="instagram" class="social-link" href="https://instagram.com/viniciuspesqueiraweb" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-behance" target="_blank"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+    </footer>
+
     <script
         type="module"
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
+      ></script>
+      <script
         nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+      ></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
