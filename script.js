@@ -40,49 +40,66 @@ $( function() {
   });
 });
 
-let numbertyped = document.getElementById('leftvalue').value
+let numbertyped = document.getElementById('leftvalue').value;
 
 async function Conversion() {
   try {
-    let responsexml = await fetch("currencies.xml");
-    let str = await responsexml.text();  
-    let parser = new DOMParser();
-    let currencies = parser.parseFromString(str, "application/xml");
-    let currencycodes = currencies.getElementsByTagName("*");
+    const responsexml = await fetch("currencies.xml");
+    const str = await responsexml.text();  
+    const parser = new DOMParser();
+    const currencies = parser.parseFromString(str, "application/xml");
+    const currencycodes = currencies.getElementsByTagName("*");
   
-    for (let i = 1; i < currencycodes.length; i++) {
+    for (var i = 1; i < currencycodes.length; i++) {
   
-      if ((document.getElementById('leftcoin').value) + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
+      if (document.getElementById('leftcoin').value + "/" + document.getElementById('rightcoin').value === currencycodes[i].textContent) {
         var currencycode = currencycodes[i].tagName;
         break
-      } 
+      } if (document.getElementById('rightcoin').value + "/" + document.getElementById('leftcoin').value === currencycodes[i].textContent) {
+        var currencycode = currencycodes[i].tagName;
+        break
+      }
     }
 
-    let response = await axios.get(
+    const leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
+    const rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
+    const response = await axios.get(
       "https://economia.awesomeapi.com.br/json/last/" + currencycode
     );
+    let date = new Date();
+    document.getElementById('lastupdate').textContent =
+      'Sale price(ask) - Last update: ' + date.toUTCString();
 
-    let leftcurrencycode = currencycode.slice(0, currencycode.indexOf("-"));
-    let rightcurrencycode = currencycode.slice(currencycode.indexOf("-") + 1);
-    if (numbertyped === document.getElementById('leftvalue').value) {
-      let convertednumber = response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
-      document.getElementById('rightvalue').value = convertednumber.toFixed(2);
-    } if (numbertyped === document.getElementById('rightvalue').value) {
-      let convertednumber = numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask
-      document.getElementById('leftvalue').value = convertednumber.toFixed(2);
+    if (currencycodes[i].textContent === document.getElementById('leftcoin').value + "/" + document.getElementById('rightcoin').value) {
+      document.getElementById('rightcurrencycode').textContent = rightcurrencycode;
+      document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
+      
+      if (numbertyped === document.getElementById('leftvalue').value) {
+        let convertednumber = response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
+        document.getElementById('rightvalue').value = convertednumber.toFixed(2);
+      } if (numbertyped === document.getElementById('rightvalue').value) {
+        let convertednumber = numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask
+        document.getElementById('leftvalue').value = convertednumber.toFixed(2);
+      }
+    } else {
+      document.getElementById('rightcurrencycode').textContent = leftcurrencycode;
+      document.getElementById('leftcurrencycode').textContent = rightcurrencycode;
+
+      if (numbertyped === document.getElementById('leftvalue').value) {
+        let convertednumber = numbertyped / response.data[leftcurrencycode + rightcurrencycode].ask;
+        document.getElementById('rightvalue').value = convertednumber.toFixed(2);
+      } if (numbertyped === document.getElementById('rightvalue').value) {
+        let convertednumber = response.data[leftcurrencycode + rightcurrencycode].ask * numbertyped;
+        document.getElementById('leftvalue').value = convertednumber.toFixed(2);
+      }
     }
 
     document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
     document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
 
-    document.getElementById('rightcurrencycode').textContent = rightcurrencycode;
-    document.getElementById('leftcurrencycode').textContent = leftcurrencycode;
-
-    let date = new Date();
-    document.getElementById('lastupdate').textContent =
-      'Sale price(ask) - Last update: ' + date.toUTCString();
   } catch (error) {
-    document.getElementById('rightvalue').value = 'Error loading';
+    document.getElementById("leftimage").src = "assets/Moedas/" + document.getElementById('leftcoin').value + ".webp";
+    document.getElementById("rightimage").src = "assets/Moedas/" + document.getElementById('rightcoin').value + ".webp";
     document.getElementById('lastupdate').textContent =
       'Conversion between this currency pair is not available. Please change the pair and try a new conversion';
   }
